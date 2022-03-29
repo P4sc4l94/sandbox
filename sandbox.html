@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Format Input</h1>
+    <form action="" id="myForm"></form>
+    <label for="recipes">Ingredients (put each ingredient on a new line)</label><br><br>
+    <textarea name="recipeList" id="list" cols="30" rows="10"></textarea><br>
+    <button type="submit" onclick="submitContent()">Submit</button>
+    <p>Ingredients Entered:</p>
+    <p id="formContent"></p>
+  <script>
+    function submitContent() {
+      // var form = document.getElementById("myForm");
+      var txt = document.getElementById("list").value;
+      var contentBox = document.getElementById("formContent");
+      var pre = document.createElement("pre");
+
+      pre.innerHTML = txt;
+      contentBox.appendChild(pre);
+    }
+    // submitContent();
+  </script>
+</body>
+</html>
